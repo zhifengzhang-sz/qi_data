@@ -18,7 +18,7 @@
 
 ## Running the timescaledb
 ```bash
-docker-compose -f docker-compose.timescaledb.yml -p timescaledb up -d
+docker-compose -f docker-compose.timescale.yml -p timescaledb up -d
 ```
 
 ## Running pgadmin
