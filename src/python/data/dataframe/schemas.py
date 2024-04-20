@@ -8,10 +8,11 @@ KLineSchema=DataFrameSchema(
     ,'Low':Column(float)
     ,'Close':Column(float)
     ,'Adj Close':Column(float)
-    ,'Volume':Column(int)
+    ,'Volume':Column(float)
     ,'Amount':Column(float,required=False)
     },
-    index=Index(pd.Timestamp,name='Date')
+    index=Index(pd.Timestamp,name='Date'),
+    strict='filter'
 )
 
 MACDSchema=DataFrameSchema(
@@ -19,19 +20,22 @@ MACDSchema=DataFrameSchema(
     ,'signal':Column(float,nullable=True)
     ,'hist':Column(float,nullable=True)
     },
-    index=Index(pd.Timestamp,name='Date')
+    index=Index(pd.Timestamp,name='Date'),
+    strict='filter'
 )
 
 BuySchema=DataFrameSchema(
     {'Buy':Column(float)
     ,'NShare':Column(int)
     },
-    index=Index(pd.Timestamp,name='Date')
+    index=Index(pd.Timestamp,name='Date'),
+    strict='filter'
 )
 
 SellSchema=DataFrameSchema(
     {'Sell':Column(float)
     ,'NShare':Column(int)
     },
-    index=Index(pd.Timestamp,name='Date')
+    index=Index(pd.Timestamp,name='Date'),
+    strict='filter'
 )
